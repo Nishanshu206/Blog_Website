@@ -29,6 +29,14 @@ app.use(fileUpload({
 }))
 
 
+app.get("/",(req,res,next)=>{
+    return res.status(200).json({
+        success: true,
+        message: "Hello World"
+    })
+})
+
+
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/blog", blogRouter);
 dbConnection()
